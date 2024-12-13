@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/user proile.png</file>
+    <file>icon/user-interface.png</file>
+    <file>icon/sair.png</file>
+    <file>icon/vecteezy_user-profile-icon-profile-avatar-user-icon-male-icon_20911739.png</file>
+    <file>icon/computador.png</file>
+  </qresource>
+</RCC>

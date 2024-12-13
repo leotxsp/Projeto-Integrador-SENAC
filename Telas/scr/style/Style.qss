@@ -1,0 +1,17 @@
+#Usuario{
+    background-color: #F6F4F3;
+}
+
+#apenasIcone{
+    background-color: #4A4A48;
+}
+
+#iconeEnome{
+    background-color: #4A4A48;
+}
+#label_3{
+    color: #FFBF00;
+}
+#label_4{
+    color: #FFBF00;
+}
