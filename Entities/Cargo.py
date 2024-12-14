@@ -1,8 +1,8 @@
 from Conexao import conectar
 
 class Cargo:
-    def __init__(self,idcurso = None, cargo = None):
-        self.idcurso = idcurso
+    def __init__(self, idCargo:int = None, cargo = None):
+        self.idCargo = idCargo
         self.cargo = cargo
 
     def buscar(self):
