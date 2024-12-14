@@ -1,7 +1,7 @@
 import sys
 from PySide6 import QtWidgets
 from Telas.ui_menu_usuario import Ui_Usuario
-from Conexao import executarSQL
+from Conexao import executar_sql
 
 class Main_usuario(QtWidgets.QMainWindow, Ui_Usuario):
     def __init__(self):
@@ -21,11 +21,11 @@ class Main_usuario(QtWidgets.QMainWindow, Ui_Usuario):
     def quandoBotaoChamadoPresionado(self):
         self.stackedWidget.setCurrentIndex(1)
     
-        
-# app = QtWidgets.QApplication(sys.argv)
-# with open(r"Telas\scr\style\Style.qss","r") as style_file:
-#     style_str = style_file.read()
-# app.setStyleSheet(style_str)
-# window = Main_usuario()
-# window.show()
-# app.exec()
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    with open(r"Telas\scr\style\Style.qss","r") as style_file:
+        style_str = style_file.read()
+    app.setStyleSheet(style_str)
+    window = Main_usuario()
+    window.show()
+    app.exec()

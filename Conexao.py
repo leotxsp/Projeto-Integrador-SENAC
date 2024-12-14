@@ -5,11 +5,11 @@ def conectar():
     port=3306,
     user='root',
     password='',
-    database='sitema_chamado'
+    database='sistema_chamado'
     )
     return conexao
 
-def executarSQL(sql):
+def executar_sql(sql):
     try:
         con = conectar()
         cursor = con.cursor()
@@ -25,8 +25,10 @@ def executarSQL(sql):
     finally:
         cursor.close()
         con.close()
-sql = "select usuario.login, setor.nome_setor from setor inner join usuario on usuario.setor_idSetor = setor.idSetor"
-# sql = "select * from usuario"
-resultados = executarSQL(sql)
 
-print(resultados)
+
+# sql = "select usuario.login, setor.nome_setor from setor inner join usuario on usuario.setor_idSetor = setor.idSetor"
+# # sql = "select * from usuario"
+# resultados = executar_sql(sql)
+#
+# print(resultados)

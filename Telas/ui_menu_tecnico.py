@@ -20,8 +20,8 @@ from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
     QTextEdit, QVBoxLayout, QWidget)
-import user_resource_rc
-import user_resource_rc
+
+from Telas.scr import user_resource_rc
 
 class Ui_tecnico(object):
     def setupUi(self, tecnico):
