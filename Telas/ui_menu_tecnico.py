@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MenuewLYoF.ui'
+## Form generated from reading UI file 'MenuTXBucL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -77,17 +77,17 @@ class Ui_tecnico(object):
 
         self.verticalLayout_2.addWidget(self.btn_perfil_aberto)
 
-        self.btn_chamados_aberto_2 = QPushButton(self.iconeEnome)
-        self.btn_chamados_aberto_2.setObjectName(u"btn_chamados_aberto_2")
-        self.btn_chamados_aberto_2.setMinimumSize(QSize(0, 40))
+        self.btn_usuarios = QPushButton(self.iconeEnome)
+        self.btn_usuarios.setObjectName(u"btn_usuarios")
+        self.btn_usuarios.setMinimumSize(QSize(0, 40))
         icon1 = QIcon()
         icon1.addFile(u":/icon/icon/user-interface.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.btn_chamados_aberto_2.setIcon(icon1)
-        self.btn_chamados_aberto_2.setIconSize(QSize(20, 20))
-        self.btn_chamados_aberto_2.setCheckable(True)
-        self.btn_chamados_aberto_2.setAutoExclusive(True)
+        self.btn_usuarios.setIcon(icon1)
+        self.btn_usuarios.setIconSize(QSize(20, 20))
+        self.btn_usuarios.setCheckable(True)
+        self.btn_usuarios.setAutoExclusive(True)
 
-        self.verticalLayout_2.addWidget(self.btn_chamados_aberto_2)
+        self.verticalLayout_2.addWidget(self.btn_usuarios)
 
         self.btn_chamados_aberto = QPushButton(self.iconeEnome)
         self.btn_chamados_aberto.setObjectName(u"btn_chamados_aberto")
@@ -243,33 +243,120 @@ class Ui_tecnico(object):
         self.gridLayout_3.addItem(self.verticalSpacer_6, 2, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.pgPerfil)
+        self.pgUsuarios = QWidget()
+        self.pgUsuarios.setObjectName(u"pgUsuarios")
+        self.gridLayout_2 = QGridLayout(self.pgUsuarios)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.horizontalSpacer = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
+
+        self.horizontalLayout_2 = QHBoxLayout()
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.pushButton = QPushButton(self.pgUsuarios)
+        self.pushButton.setObjectName(u"pushButton")
+
+        self.horizontalLayout_2.addWidget(self.pushButton)
+
+        self.lineEdit = QLineEdit(self.pgUsuarios)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.horizontalLayout_2.addWidget(self.lineEdit)
+
+
+        self.gridLayout_2.addLayout(self.horizontalLayout_2, 0, 1, 1, 1)
+
+        self.horizontalSpacer_2 = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 2, 1, 1)
+
+        self.tableWidget = QTableWidget(self.pgUsuarios)
+        if (self.tableWidget.columnCount() < 7):
+            self.tableWidget.setColumnCount(7)
+        __qtablewidgetitem = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        self.tableWidget.setObjectName(u"tableWidget")
+
+        self.gridLayout_2.addWidget(self.tableWidget, 1, 0, 1, 3)
+
+        self.stackedWidget.addWidget(self.pgUsuarios)
         self.pgChamados = QWidget()
         self.pgChamados.setObjectName(u"pgChamados")
-        self.TB_Chamados_usuario = QTableWidget(self.pgChamados)
-        if (self.TB_Chamados_usuario.columnCount() < 4):
-            self.TB_Chamados_usuario.setColumnCount(4)
-        __qtablewidgetitem = QTableWidgetItem()
-        self.TB_Chamados_usuario.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        self.TB_Chamados_usuario.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        self.TB_Chamados_usuario.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        self.TB_Chamados_usuario.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        self.TB_Chamados_usuario.setObjectName(u"TB_Chamados_usuario")
-        self.TB_Chamados_usuario.setGeometry(QRect(10, 350, 581, 231))
+        self.gridLayout_4 = QGridLayout(self.pgChamados)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.BtnAbrirChamado = QPushButton(self.pgChamados)
         self.BtnAbrirChamado.setObjectName(u"BtnAbrirChamado")
-        self.BtnAbrirChamado.setGeometry(QRect(80, 80, 75, 24))
-        self.BtnFecharChamado = QPushButton(self.pgChamados)
-        self.BtnFecharChamado.setObjectName(u"BtnFecharChamado")
-        self.BtnFecharChamado.setGeometry(QRect(80, 110, 75, 24))
+
+        self.gridLayout_4.addWidget(self.BtnAbrirChamado, 1, 2, 1, 1)
+
         self.BtnAlterarChamado = QPushButton(self.pgChamados)
         self.BtnAlterarChamado.setObjectName(u"BtnAlterarChamado")
-        self.BtnAlterarChamado.setGeometry(QRect(80, 140, 75, 24))
+
+        self.gridLayout_4.addWidget(self.BtnAlterarChamado, 1, 4, 1, 1)
+
+        self.horizontalSpacer_9 = QSpacerItem(297, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_4.addItem(self.horizontalSpacer_9, 0, 0, 1, 1)
+
+        self.TB_Chamados_usuario = QTableWidget(self.pgChamados)
+        if (self.TB_Chamados_usuario.columnCount() < 9):
+            self.TB_Chamados_usuario.setColumnCount(9)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(0, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(1, __qtablewidgetitem8)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(2, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(3, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(4, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(5, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(6, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(7, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(8, __qtablewidgetitem15)
+        self.TB_Chamados_usuario.setObjectName(u"TB_Chamados_usuario")
+
+        self.gridLayout_4.addWidget(self.TB_Chamados_usuario, 3, 0, 1, 5)
+
+        self.BtnFecharChamado = QPushButton(self.pgChamados)
+        self.BtnFecharChamado.setObjectName(u"BtnFecharChamado")
+
+        self.gridLayout_4.addWidget(self.BtnFecharChamado, 1, 3, 1, 1)
+
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.pushButton_2 = QPushButton(self.pgChamados)
+        self.pushButton_2.setObjectName(u"pushButton_2")
+
+        self.horizontalLayout_7.addWidget(self.pushButton_2)
+
+        self.lineEdit_2 = QLineEdit(self.pgChamados)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.horizontalLayout_7.addWidget(self.lineEdit_2)
+
+
+        self.gridLayout_4.addLayout(self.horizontalLayout_7, 1, 0, 1, 1)
+
         self.widget_2 = QWidget(self.pgChamados)
         self.widget_2.setObjectName(u"widget_2")
-        self.widget_2.setGeometry(QRect(320, 60, 271, 251))
         self.verticalLayout_10 = QVBoxLayout(self.widget_2)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.horizontalLayout_4 = QHBoxLayout()
@@ -364,6 +451,9 @@ class Ui_tecnico(object):
 
         self.verticalLayout_10.addLayout(self.horizontalLayout_11)
 
+
+        self.gridLayout_4.addWidget(self.widget_2, 0, 2, 1, 3)
+
         self.stackedWidget.addWidget(self.pgChamados)
 
         self.verticalLayout_5.addWidget(self.stackedWidget)
@@ -379,7 +469,7 @@ class Ui_tecnico(object):
         self.retranslateUi(tecnico)
         self.pushButton_7.toggled.connect(self.iconeEnome.setHidden)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(tecnico)
@@ -389,7 +479,7 @@ class Ui_tecnico(object):
         tecnico.setWindowTitle(QCoreApplication.translate("tecnico", u"Tecnico", None))
         self.label_2.setText("")
         self.btn_perfil_aberto.setText(QCoreApplication.translate("tecnico", u"Perfil", None))
-        self.btn_chamados_aberto_2.setText(QCoreApplication.translate("tecnico", u"gerenciar usuarios", None))
+        self.btn_usuarios.setText(QCoreApplication.translate("tecnico", u"gerenciar usuarios", None))
         self.btn_chamados_aberto.setText(QCoreApplication.translate("tecnico", u"chamados", None))
         self.pushButton_6.setText(QCoreApplication.translate("tecnico", u"Sair", None))
         self.pushButton_7.setText("")
@@ -401,17 +491,45 @@ class Ui_tecnico(object):
         self.LB_setor.setText(QCoreApplication.translate("tecnico", u"setor", None))
         self.BtnEditar.setText(QCoreApplication.translate("tecnico", u"Editar", None))
         self.BtnLogoff.setText(QCoreApplication.translate("tecnico", u"Logoff", None))
-        ___qtablewidgetitem = self.TB_Chamados_usuario.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("tecnico", u"Status", None));
-        ___qtablewidgetitem1 = self.TB_Chamados_usuario.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("tecnico", u"Titulo", None));
-        ___qtablewidgetitem2 = self.TB_Chamados_usuario.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("tecnico", u"Descri\u00e7\u00e3o", None));
-        ___qtablewidgetitem3 = self.TB_Chamados_usuario.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("tecnico", u"Data de abertura", None));
+        self.pushButton.setText("")
+        self.lineEdit.setPlaceholderText(QCoreApplication.translate("tecnico", u"Procurar", None))
+        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("tecnico", u"ID", None));
+        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("tecnico", u"USUARIO", None));
+        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("tecnico", u"EMAIL", None));
+        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("tecnico", u"SENHA", None));
+        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("tecnico", u"NOME", None));
+        ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("tecnico", u"SETOR", None));
+        ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("tecnico", u"CARGO", None));
         self.BtnAbrirChamado.setText(QCoreApplication.translate("tecnico", u"Abrir", None))
-        self.BtnFecharChamado.setText(QCoreApplication.translate("tecnico", u"fechar", None))
         self.BtnAlterarChamado.setText(QCoreApplication.translate("tecnico", u"Alterar", None))
+        ___qtablewidgetitem7 = self.TB_Chamados_usuario.horizontalHeaderItem(0)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("tecnico", u"ID", None));
+        ___qtablewidgetitem8 = self.TB_Chamados_usuario.horizontalHeaderItem(1)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("tecnico", u"Status", None));
+        ___qtablewidgetitem9 = self.TB_Chamados_usuario.horizontalHeaderItem(2)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("tecnico", u"Prioridade", None));
+        ___qtablewidgetitem10 = self.TB_Chamados_usuario.horizontalHeaderItem(3)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("tecnico", u"Titulo", None));
+        ___qtablewidgetitem11 = self.TB_Chamados_usuario.horizontalHeaderItem(4)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("tecnico", u"Descri\u00e7\u00e3o", None));
+        ___qtablewidgetitem12 = self.TB_Chamados_usuario.horizontalHeaderItem(5)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("tecnico", u"Usuario/abertura", None));
+        ___qtablewidgetitem13 = self.TB_Chamados_usuario.horizontalHeaderItem(6)
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("tecnico", u"Usuario/fechamento", None));
+        ___qtablewidgetitem14 = self.TB_Chamados_usuario.horizontalHeaderItem(7)
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("tecnico", u"Data de fechamento", None));
+        ___qtablewidgetitem15 = self.TB_Chamados_usuario.horizontalHeaderItem(8)
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("tecnico", u"Data de abertura", None));
+        self.BtnFecharChamado.setText(QCoreApplication.translate("tecnico", u"fechar", None))
+        self.pushButton_2.setText(QCoreApplication.translate("tecnico", u"procurar", None))
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("tecnico", u"Procurar", None))
         self.label_9.setText(QCoreApplication.translate("tecnico", u"Status", None))
         self.label_10.setText(QCoreApplication.translate("tecnico", u"Titulo", None))
         self.label_11.setText(QCoreApplication.translate("tecnico", u"Descri\u00e7\u00e3o", None))

@@ -25,39 +25,56 @@ class Usuario:
             con.commit()
             print("Usuário inserido com sucesso.")
         except Exception as e:
+            con.rollback()
             print("Erro ao inserir usuário:", e)
         finally:
             cursor.close()
 
-
-
     def excluir(self):
         con = conectar()
         cursor = con.cursor()
-        sql = f'delete from curso where idcurso = {self.idcurso}'
-        cursor.execute(sql)
-        con.commit()
-        con.close()
+        sql = 'DELETE FROM `usuario` WHERE `IDusuario` = %s'
+        try:
+            cursor.execute(sql, (self.IDusuario,))
+            con.commit()
+            print("Usuário excluído com sucesso.")
+        except Exception as e:
+            con.rollback()
+            print("Erro ao excluir usuário:", e)
+        finally:
+            cursor.close()
+            con.close()
 
     def alterar(self):
         con = conectar()
         cursor = con.cursor()
-        sql = f'updete curso set nome = "{self.nome}", ch= {self.ch} where idcurso{self.idcurso}'
-        cursor.execute(sql)
-        con.commit()
-        con.close()
+        sql = (
+            'UPDATE `usuario` SET `login` = %s, `senha` = %s, `nome` = %s, `email` = %s, `setor_idsetor` = %s, `cargo_idcargo` = %s '
+            'WHERE `IDusuario` = %s'
+        )
+        values = (self.login, self.senha, self.nome, self.email, self.setor, self.cargo, self.IDusuario)
+        try:
+            cursor.execute(sql, values)
+            con.commit()
+            print("Usuário alterado com sucesso.")
+        except Exception as e:
+            con.rollback()
+            print("Erro ao alterar usuário:", e)
+        finally:
+            cursor.close()
+            con.close()
 
     def buscar(self):
         con = conectar()
         cursor = con.cursor()
-        sql = 'select * from usuario'
+        sql = 'SELECT * FROM `usuario`'
         cursor.execute(sql)
         resultado = cursor.fetchall()
         lista = []
         for item in resultado:
-            print(item)
             usuario = Usuario(item[0], item[1], item[2], item[3], item[4], item[5], item[6])
             lista.append(usuario)
+        cursor.close()
         con.close()
         return lista
 

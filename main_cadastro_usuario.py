@@ -38,8 +38,7 @@ class Main_usuario(QtWidgets.QMainWindow, Ui_cadastroUsuario):
             self.login.show()
             self.close()
         except Exception as erro:
-            print("Erro ao inserir")
-            print(erro)
+            QMessageBox.warning(self, "Erro inexperado", "Ocorreu um erro ao cadastrar o usuario.", erro)
 
     def validar_campos(self):
         if not self.LElogin.text():
