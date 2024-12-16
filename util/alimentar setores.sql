@@ -1,0 +1,16 @@
+INSERT INTO setor (nome_setor) VALUES
+('Tecnologia da Informação'),
+('Recursos Humanos'),
+('Financeiro'),
+('Marketing'),
+('Operações'),
+('Vendas'),
+('Atendimento ao Cliente'),
+('Logística'),
+('Produção'),
+('Administrativo'),
+('Jurídico'),
+('Compras'),
+('Qualidade'),
+('Projetos'),
+('Sustentabilidade');

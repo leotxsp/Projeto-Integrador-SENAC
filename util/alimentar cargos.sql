@@ -1,0 +1,16 @@
+INSERT INTO cargo (nome_cargo) VALUES
+('Desenvolvedor'),
+('Analista de RH'),
+('Contador'),
+('Especialista de Marketing'),
+('Gerente de Operações'),
+('Vendedor'),
+('Atendente'),
+('Analista de Logística'),
+('Técnico de Produção'),
+('Assistente Administrativo'),
+('Advogado'),
+('Comprador'),
+('Analista de Qualidade'),
+('Gerente de Projetos'),
+('Coordenador de Sustentabilidade');
