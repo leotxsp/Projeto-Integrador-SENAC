@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Tela_alterar_chamadoalEXvl.ui'
+## Form generated from reading UI file 'Tela_abrir_chamadoKxasGQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -151,49 +151,12 @@ class Ui_AlterarCadastro(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.label_5 = QLabel(self.widget)
-        self.label_5.setObjectName(u"label_5")
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
-        self.horizontalLayout_2.addWidget(self.label_5)
-
-        self.horizontalSpacer_12 = QSpacerItem(74, 40, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_12)
-
-        self.dateEdit_2 = QDateEdit(self.widget)
-        self.dateEdit_2.setObjectName(u"dateEdit_2")
-
-        self.horizontalLayout_2.addWidget(self.dateEdit_2)
-
-        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_2.addItem(self.horizontalSpacer_7)
-
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+        self.verticalLayout_2.addItem(self.verticalSpacer)
 
 
         self.gridLayout.addWidget(self.widget, 0, 1, 1, 1)
-
-        self.verticalLayout_12 = QVBoxLayout()
-        self.verticalLayout_12.setSpacing(0)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.centralwidget)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_12.addWidget(self.label_2)
-
-        self.TEdescricao_2 = QTextEdit(self.centralwidget)
-        self.TEdescricao_2.setObjectName(u"TEdescricao_2")
-
-        self.verticalLayout_12.addWidget(self.TEdescricao_2)
-
-
-        self.gridLayout.addLayout(self.verticalLayout_12, 1, 0, 1, 1)
 
         self.pushButton = QPushButton(self.centralwidget)
         self.pushButton.setObjectName(u"pushButton")
@@ -208,14 +171,13 @@ class Ui_AlterarCadastro(object):
     # setupUi
 
     def retranslateUi(self, AlterarCadastro):
-        AlterarCadastro.setWindowTitle(QCoreApplication.translate("AlterarCadastro", u"ALTERAR", None))
+        AlterarCadastro.setWindowTitle(QCoreApplication.translate("AlterarCadastro", u"ABRIR", None))
         self.label.setText(QCoreApplication.translate("AlterarCadastro", u"Descri\u00e7\u00e3o de entrada", None))
+        self.TEdescricao.setWindowTitle(QCoreApplication.translate("AlterarCadastro", u"Abrir", None))
         self.label_10.setText(QCoreApplication.translate("AlterarCadastro", u"Titulo", None))
         self.label_12.setText(QCoreApplication.translate("AlterarCadastro", u"Status", None))
         self.label_3.setText(QCoreApplication.translate("AlterarCadastro", u"Prioridade", None))
         self.label_4.setText(QCoreApplication.translate("AlterarCadastro", u"Data de abertura", None))
-        self.label_5.setText(QCoreApplication.translate("AlterarCadastro", u"Data de fechamento", None))
-        self.label_2.setText(QCoreApplication.translate("AlterarCadastro", u"Descri\u00e7\u00e3o de fechamento", None))
         self.pushButton.setText(QCoreApplication.translate("AlterarCadastro", u"Confirmar", None))
     # retranslateUi
 

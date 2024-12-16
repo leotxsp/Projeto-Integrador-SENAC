@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Tela_alterar_chamadoalEXvl.ui'
+## Form generated from reading UI file 'Tela_fechar_chamadofaCjrk.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -15,10 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QGridLayout,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QTextEdit,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QGridLayout, QHBoxLayout,
+    QLabel, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
 
 class Ui_AlterarCadastro(object):
     def setupUi(self, AlterarCadastro):
@@ -64,10 +63,10 @@ class Ui_AlterarCadastro(object):
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_6)
 
-        self.edtTitulo = QLineEdit(self.widget)
-        self.edtTitulo.setObjectName(u"edtTitulo")
+        self.label_9 = QLabel(self.widget)
+        self.label_9.setObjectName(u"label_9")
 
-        self.horizontalLayout_5.addWidget(self.edtTitulo)
+        self.horizontalLayout_5.addWidget(self.label_9)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -89,12 +88,10 @@ class Ui_AlterarCadastro(object):
 
         self.horizontalLayout_8.addItem(self.horizontalSpacer_9)
 
-        self.CBStatus_2 = QComboBox(self.widget)
-        self.CBStatus_2.setObjectName(u"CBStatus_2")
-        self.CBStatus_2.setMinimumSize(QSize(150, 0))
-        self.CBStatus_2.setMaximumSize(QSize(150, 16777215))
+        self.label_8 = QLabel(self.widget)
+        self.label_8.setObjectName(u"label_8")
 
-        self.horizontalLayout_8.addWidget(self.CBStatus_2)
+        self.horizontalLayout_8.addWidget(self.label_8)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -114,12 +111,10 @@ class Ui_AlterarCadastro(object):
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
 
-        self.CBStatus = QComboBox(self.widget)
-        self.CBStatus.setObjectName(u"CBStatus")
-        self.CBStatus.setMinimumSize(QSize(150, 0))
-        self.CBStatus.setMaximumSize(QSize(150, 16777215))
+        self.label_7 = QLabel(self.widget)
+        self.label_7.setObjectName(u"label_7")
 
-        self.horizontalLayout_4.addWidget(self.CBStatus)
+        self.horizontalLayout_4.addWidget(self.label_7)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -139,10 +134,10 @@ class Ui_AlterarCadastro(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer_11)
 
-        self.dateEdit = QDateEdit(self.widget)
-        self.dateEdit.setObjectName(u"dateEdit")
+        self.label_6 = QLabel(self.widget)
+        self.label_6.setObjectName(u"label_6")
 
-        self.horizontalLayout.addWidget(self.dateEdit)
+        self.horizontalLayout.addWidget(self.label_6)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -208,12 +203,16 @@ class Ui_AlterarCadastro(object):
     # setupUi
 
     def retranslateUi(self, AlterarCadastro):
-        AlterarCadastro.setWindowTitle(QCoreApplication.translate("AlterarCadastro", u"ALTERAR", None))
+        AlterarCadastro.setWindowTitle(QCoreApplication.translate("AlterarCadastro", u"FECHAR CHAMADO", None))
         self.label.setText(QCoreApplication.translate("AlterarCadastro", u"Descri\u00e7\u00e3o de entrada", None))
         self.label_10.setText(QCoreApplication.translate("AlterarCadastro", u"Titulo", None))
+        self.label_9.setText(QCoreApplication.translate("AlterarCadastro", u"TextLabel", None))
         self.label_12.setText(QCoreApplication.translate("AlterarCadastro", u"Status", None))
+        self.label_8.setText(QCoreApplication.translate("AlterarCadastro", u"TextLabel", None))
         self.label_3.setText(QCoreApplication.translate("AlterarCadastro", u"Prioridade", None))
+        self.label_7.setText(QCoreApplication.translate("AlterarCadastro", u"TextLabel", None))
         self.label_4.setText(QCoreApplication.translate("AlterarCadastro", u"Data de abertura", None))
+        self.label_6.setText(QCoreApplication.translate("AlterarCadastro", u"TextLabel", None))
         self.label_5.setText(QCoreApplication.translate("AlterarCadastro", u"Data de fechamento", None))
         self.label_2.setText(QCoreApplication.translate("AlterarCadastro", u"Descri\u00e7\u00e3o de fechamento", None))
         self.pushButton.setText(QCoreApplication.translate("AlterarCadastro", u"Confirmar", None))

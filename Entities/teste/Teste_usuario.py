@@ -15,9 +15,7 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
     def valida_login(self):
         senha = self.edtSenha.text()
         login = self.edtUsuario.text()
-        print(senha, login)
         usuario = Usuario.buscar_por_email_senha(login,senha)
-        print(usuario.cargo)
         if usuario:
             if usuario.cargo.idCargo == 1:
                 self.validou.setStyleSheet("color: rgb(100, 243, 29);")
@@ -28,7 +26,7 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
             else:
                 self.validou.setStyleSheet("color: rgb(100, 243, 29);")
                 self.validou.setText("Logado com sucesso")
-                self.usuario = Main_usuario()
+                self.usuario = Main_usuario(usuario)
                 self.usuario.show()
                 self.close()
         else:

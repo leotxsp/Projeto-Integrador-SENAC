@@ -17,7 +17,7 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
-      <item alignment="">
+      <item>
        <widget class="QLabel" name="label">
         <property name="text">
          <string>Descrição de entrada</string>
@@ -334,7 +334,7 @@
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item alignment="">
+      <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Descrição de fechamento</string>

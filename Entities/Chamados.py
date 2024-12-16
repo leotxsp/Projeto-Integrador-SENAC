@@ -84,7 +84,7 @@ class Chamado:
     def buscar(self):
         con = conectar()
         cursor = con.cursor()
-        sql = 'SELECT * FROM chamado'
+        sql = 'SELECT * chamado'
         try:
             cursor.execute(sql)
             resultado = cursor.fetchall()
@@ -100,6 +100,29 @@ class Chamado:
         finally:
             cursor.close()
             con.close()
+
+
+    def buscarPorUsuario(self,usuario_abertura):
+        con = conectar()
+        cursor = con.cursor()
+        sql = f'SELECT chamado.*, usuario.nome FROM chamado JOIN usuario ON chamado.usuario_abertura = usuario.idusuario WHERE chamado.usuario_abertura = {usuario_abertura};'
+        try:
+            cursor.execute(sql)
+            resultado = cursor.fetchall()
+            lista = []
+            for item in resultado:
+                print(item)
+                chamado = Chamado(item[0], item[1], item[2], item[3], item[4],
+                                  item[5], item[6], item[7], item[8], item[9])
+                lista.append(chamado)
+            return lista
+        except Exception as e:
+            print("Erro ao buscar a:", e)
+            return []
+        finally:
+            cursor.close()
+            con.close()
+
 
 if __name__ == '__main__':
     lista_chamados = Chamado().buscar()

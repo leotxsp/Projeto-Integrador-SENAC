@@ -109,7 +109,7 @@ class Usuario:
 
 
 if __name__ == '__main__':
-    login = "leotxsp"
+    login = "alice.silva"
     senha = "123"
 
     usuario = Usuario.buscar_por_email_senha(login, senha)

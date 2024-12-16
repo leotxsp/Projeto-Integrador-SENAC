@@ -574,6 +574,9 @@
                   <property name="text">
                    <string>procurar</string>
                   </property>
+                  <property name="shortcut">
+                   <string>Enter, Return</string>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -662,7 +665,7 @@
  <resources>
   <include location="scr/user_resource.qrc"/>
   <include location="scr/user_resource.qrc"/>
-  <include location="../../../../Users/Pichau/.designer/backup/scr/user_resource.qrc"/>
+  <include location="scr/user_resource.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -678,6 +681,22 @@
     <hint type="destinationlabel">
      <x>41</x>
      <y>276</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>tecnico</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>571</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>167</x>
+     <y>-8</y>
     </hint>
    </hints>
   </connection>
