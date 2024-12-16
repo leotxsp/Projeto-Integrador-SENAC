@@ -16,6 +16,7 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
         usuario = self.edtUsuario.text()
         sql = f"select login,senha,cargo_idcargo from usuario where login = '{usuario}' and senha = '{senha}'"
         quarry = executar_sql(sql)
+        print(quarry)
         print(quarry[0][2])
         if quarry:
             if quarry[0][2] == 1:
@@ -33,9 +34,7 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
         else:
             self.validou.setStyleSheet("color: rgb(243, 232, 228);")
             self.validou.setText("Usuario ou senha incorretos")
-        
-        
-        
+
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Main_login()

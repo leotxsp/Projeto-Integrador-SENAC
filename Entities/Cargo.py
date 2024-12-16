@@ -17,3 +17,14 @@ class Cargo:
             lista.append(cargo)
         conexao.close()
         return lista
+
+    def buscarUm(idCargo):
+        conexao = conectar()
+        cursor = conexao.cursor()
+        sql = f'SELECT * FROM cargo WHERE idcargo = {idCargo}'
+        cursor.execute(sql)
+        resultado = cursor.fetchone()
+        conexao.close()
+        if resultado:
+            return Cargo(resultado[0], resultado[1])
+        return None

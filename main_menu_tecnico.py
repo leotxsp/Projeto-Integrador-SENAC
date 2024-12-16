@@ -6,13 +6,13 @@ from Entities.Usuario import Usuario
 from Conexao import executar_sql
 
 class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
-    def __init__(self):
+    def __init__(self, user = None):
         super(Main_tecnico,self).__init__()
+        self.user = user
         self.setupUi(self)
         self.stackedWidget.setCurrentIndex(0)
         self.listaChamados = []
         self.listaUsuarios = []
-
 
         self.btn_perfil_aberto.setChecked(True)
         self.btn_perfil_aberto.clicked.connect(self.quandoBotaoPerfilPressionado)
@@ -21,7 +21,14 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
 
         self.montarTabelaChamados()
         self.montarTabelaUsuarios()
+        self.montarPerfil()
 
+    def montarPerfil(self):
+        self.LB_login.setText(self.user.login)
+        self.LB_email_2.setText(self.user.nome)
+        self.LB_email.setText(self.user.email)
+        self.LB_cargo.setText(self.user.cargo.cargo)
+        self.LB_setor.setText(self.user.setor.nome_setor)
 
     def buscarUsuarios(self):
         try:
