@@ -107,10 +107,20 @@ class Usuario:
             cursor.close()
             con.close()
 
+    def buscarPorUsuario(usuario):
+        con = conectar()
+        cursor = con.cursor()
+        sql = f'select nome from usuario where idusuario = {usuario};'
+        cursor.execute(sql)
+        resultado = cursor.fetchall()
+        resultado = (resultado[0][0]).upper()
+        cursor.close()
+        con.close()
+        return resultado
 
 if __name__ == '__main__':
     login = "alice.silva"
-    senha = "123"
+    senha = "senha123"
 
     usuario = Usuario.buscar_por_email_senha(login, senha)
     print(usuario)

@@ -11,6 +11,8 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
         self.setupUi(self)
         self.BtnEntrar.clicked.connect(self.valida_login)
         self.usuario = None
+        self.edtSenha.setText("123")
+        self.edtUsuario.setText("leotxsp")
 
     def valida_login(self):
         senha = self.edtSenha.text()
@@ -34,6 +36,7 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
             self.validou.setText("Usuario ou senha incorretos")
 
 if __name__ == '__main__':
+
     app = QtWidgets.QApplication(sys.argv)
     window = Main_login()
     window.show()

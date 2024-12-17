@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MenuTXBucL.ui'
+## Form generated from reading UI file 'MenuGWlirr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -15,11 +15,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QStackedWidget, QTableWidget, QTableWidgetItem,
-    QTextEdit, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QSpacerItem, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 from Telas.scr import user_resource_rc
 
@@ -247,10 +246,6 @@ class Ui_tecnico(object):
         self.pgUsuarios.setObjectName(u"pgUsuarios")
         self.gridLayout_2 = QGridLayout(self.pgUsuarios)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.horizontalSpacer = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
-
         self.horizontalLayout_2 = QHBoxLayout()
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.pushButton = QPushButton(self.pgUsuarios)
@@ -268,7 +263,7 @@ class Ui_tecnico(object):
 
         self.horizontalSpacer_2 = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
-        self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 2, 1, 1)
+        self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 3, 1, 1)
 
         self.tableWidget = QTableWidget(self.pgUsuarios)
         if (self.tableWidget.columnCount() < 7):
@@ -288,31 +283,59 @@ class Ui_tecnico(object):
         __qtablewidgetitem6 = QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         self.tableWidget.setObjectName(u"tableWidget")
+        self.tableWidget.horizontalHeader().setStretchLastSection(True)
 
-        self.gridLayout_2.addWidget(self.tableWidget, 1, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.tableWidget, 1, 0, 1, 4)
+
+        self.horizontalSpacer = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
+
+        self.BtnAbrirChamado_2 = QPushButton(self.pgUsuarios)
+        self.BtnAbrirChamado_2.setObjectName(u"BtnAbrirChamado_2")
+
+        self.gridLayout_2.addWidget(self.BtnAbrirChamado_2, 0, 2, 1, 1)
 
         self.stackedWidget.addWidget(self.pgUsuarios)
         self.pgChamados = QWidget()
         self.pgChamados.setObjectName(u"pgChamados")
         self.gridLayout_4 = QGridLayout(self.pgChamados)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.BtnAbrirChamado = QPushButton(self.pgChamados)
-        self.BtnAbrirChamado.setObjectName(u"BtnAbrirChamado")
+        self.BtnFecharChamado = QPushButton(self.pgChamados)
+        self.BtnFecharChamado.setObjectName(u"BtnFecharChamado")
 
-        self.gridLayout_4.addWidget(self.BtnAbrirChamado, 1, 2, 1, 1)
+        self.gridLayout_4.addWidget(self.BtnFecharChamado, 2, 2, 1, 1)
 
         self.BtnAlterarChamado = QPushButton(self.pgChamados)
         self.BtnAlterarChamado.setObjectName(u"BtnAlterarChamado")
 
-        self.gridLayout_4.addWidget(self.BtnAlterarChamado, 1, 4, 1, 1)
+        self.gridLayout_4.addWidget(self.BtnAlterarChamado, 2, 3, 1, 1)
 
-        self.horizontalSpacer_9 = QSpacerItem(297, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_7 = QHBoxLayout()
+        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
+        self.pushButton_2 = QPushButton(self.pgChamados)
+        self.pushButton_2.setObjectName(u"pushButton_2")
 
-        self.gridLayout_4.addItem(self.horizontalSpacer_9, 0, 0, 1, 1)
+        self.horizontalLayout_7.addWidget(self.pushButton_2)
+
+        self.lineEdit_2 = QLineEdit(self.pgChamados)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+
+        self.horizontalLayout_7.addWidget(self.lineEdit_2)
+
+
+        self.gridLayout_4.addLayout(self.horizontalLayout_7, 2, 0, 1, 1)
+
+        self.widget_2 = QWidget(self.pgChamados)
+        self.widget_2.setObjectName(u"widget_2")
+        self.verticalLayout_10 = QVBoxLayout(self.widget_2)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+
+        self.gridLayout_4.addWidget(self.widget_2, 0, 1, 2, 3)
 
         self.TB_Chamados_usuario = QTableWidget(self.pgChamados)
-        if (self.TB_Chamados_usuario.columnCount() < 9):
-            self.TB_Chamados_usuario.setColumnCount(9)
+        if (self.TB_Chamados_usuario.columnCount() < 10):
+            self.TB_Chamados_usuario.setColumnCount(10)
         __qtablewidgetitem7 = QTableWidgetItem()
         self.TB_Chamados_usuario.setHorizontalHeaderItem(0, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
@@ -331,128 +354,16 @@ class Ui_tecnico(object):
         self.TB_Chamados_usuario.setHorizontalHeaderItem(7, __qtablewidgetitem14)
         __qtablewidgetitem15 = QTableWidgetItem()
         self.TB_Chamados_usuario.setHorizontalHeaderItem(8, __qtablewidgetitem15)
+        __qtablewidgetitem16 = QTableWidgetItem()
+        self.TB_Chamados_usuario.setHorizontalHeaderItem(9, __qtablewidgetitem16)
         self.TB_Chamados_usuario.setObjectName(u"TB_Chamados_usuario")
 
-        self.gridLayout_4.addWidget(self.TB_Chamados_usuario, 3, 0, 1, 5)
+        self.gridLayout_4.addWidget(self.TB_Chamados_usuario, 3, 0, 1, 4)
 
-        self.BtnFecharChamado = QPushButton(self.pgChamados)
-        self.BtnFecharChamado.setObjectName(u"BtnFecharChamado")
+        self.BtnAbrirChamado = QPushButton(self.pgChamados)
+        self.BtnAbrirChamado.setObjectName(u"BtnAbrirChamado")
 
-        self.gridLayout_4.addWidget(self.BtnFecharChamado, 1, 3, 1, 1)
-
-        self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.pushButton_2 = QPushButton(self.pgChamados)
-        self.pushButton_2.setObjectName(u"pushButton_2")
-
-        self.horizontalLayout_7.addWidget(self.pushButton_2)
-
-        self.lineEdit_2 = QLineEdit(self.pgChamados)
-        self.lineEdit_2.setObjectName(u"lineEdit_2")
-
-        self.horizontalLayout_7.addWidget(self.lineEdit_2)
-
-
-        self.gridLayout_4.addLayout(self.horizontalLayout_7, 1, 0, 1, 1)
-
-        self.widget_2 = QWidget(self.pgChamados)
-        self.widget_2.setObjectName(u"widget_2")
-        self.verticalLayout_10 = QVBoxLayout(self.widget_2)
-        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.label_9 = QLabel(self.widget_2)
-        self.label_9.setObjectName(u"label_9")
-        self.label_9.setMaximumSize(QSize(50, 16777215))
-        self.label_9.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.horizontalLayout_4.addWidget(self.label_9)
-
-        self.horizontalSpacer_5 = QSpacerItem(40, 20, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
-
-        self.CBStatus = QComboBox(self.widget_2)
-        self.CBStatus.setObjectName(u"CBStatus")
-        self.CBStatus.setMinimumSize(QSize(150, 0))
-        self.CBStatus.setMaximumSize(QSize(150, 16777215))
-
-        self.horizontalLayout_4.addWidget(self.CBStatus)
-
-
-        self.verticalLayout_10.addLayout(self.horizontalLayout_4)
-
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.label_10 = QLabel(self.widget_2)
-        self.label_10.setObjectName(u"label_10")
-        self.label_10.setMaximumSize(QSize(50, 16777215))
-        self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.horizontalLayout_5.addWidget(self.label_10)
-
-        self.horizontalSpacer_6 = QSpacerItem(5, 5, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_5.addItem(self.horizontalSpacer_6)
-
-        self.edtTitulo = QLineEdit(self.widget_2)
-        self.edtTitulo.setObjectName(u"edtTitulo")
-
-        self.horizontalLayout_5.addWidget(self.edtTitulo)
-
-
-        self.verticalLayout_10.addLayout(self.horizontalLayout_5)
-
-        self.verticalLayout_11 = QVBoxLayout()
-        self.verticalLayout_11.setSpacing(0)
-        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.label_11 = QLabel(self.widget_2)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setMaximumSize(QSize(50, 16777215))
-        self.label_11.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.verticalLayout_11.addWidget(self.label_11)
-
-        self.verticalSpacer_3 = QSpacerItem(5, 5, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
-
-        self.verticalLayout_11.addItem(self.verticalSpacer_3)
-
-        self.TEdescricao = QTextEdit(self.widget_2)
-        self.TEdescricao.setObjectName(u"TEdescricao")
-
-        self.verticalLayout_11.addWidget(self.TEdescricao)
-
-
-        self.verticalLayout_10.addLayout(self.verticalLayout_11)
-
-        self.horizontalLayout_11 = QHBoxLayout()
-        self.horizontalLayout_11.setSpacing(0)
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.label_21 = QLabel(self.widget_2)
-        self.label_21.setObjectName(u"label_21")
-        self.label_21.setMaximumSize(QSize(50, 16777215))
-        self.label_21.setAlignment(Qt.AlignmentFlag.AlignCenter)
-
-        self.horizontalLayout_11.addWidget(self.label_21)
-
-        self.horizontalSpacer_11 = QSpacerItem(5, 5, QSizePolicy.Policy.MinimumExpanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_11.addItem(self.horizontalSpacer_11)
-
-        self.dateEdit = QDateEdit(self.widget_2)
-        self.dateEdit.setObjectName(u"dateEdit")
-
-        self.horizontalLayout_11.addWidget(self.dateEdit)
-
-
-        self.verticalLayout_10.addLayout(self.horizontalLayout_11)
-
-
-        self.gridLayout_4.addWidget(self.widget_2, 0, 2, 1, 3)
+        self.gridLayout_4.addWidget(self.BtnAbrirChamado, 2, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.pgChamados)
 
@@ -468,6 +379,7 @@ class Ui_tecnico(object):
 
         self.retranslateUi(tecnico)
         self.pushButton_7.toggled.connect(self.iconeEnome.setHidden)
+        self.pushButton_6.clicked.connect(tecnico.close)
 
         self.stackedWidget.setCurrentIndex(1)
 
@@ -507,8 +419,14 @@ class Ui_tecnico(object):
         ___qtablewidgetitem5.setText(QCoreApplication.translate("tecnico", u"SETOR", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("tecnico", u"CARGO", None));
-        self.BtnAbrirChamado.setText(QCoreApplication.translate("tecnico", u"Abrir", None))
+        self.BtnAbrirChamado_2.setText(QCoreApplication.translate("tecnico", u"Abrir", None))
+        self.BtnFecharChamado.setText(QCoreApplication.translate("tecnico", u"fechar", None))
         self.BtnAlterarChamado.setText(QCoreApplication.translate("tecnico", u"Alterar", None))
+        self.pushButton_2.setText(QCoreApplication.translate("tecnico", u"procurar", None))
+#if QT_CONFIG(shortcut)
+        self.pushButton_2.setShortcut(QCoreApplication.translate("tecnico", u"Enter, Return", None))
+#endif // QT_CONFIG(shortcut)
+        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("tecnico", u"Procurar", None))
         ___qtablewidgetitem7 = self.TB_Chamados_usuario.horizontalHeaderItem(0)
         ___qtablewidgetitem7.setText(QCoreApplication.translate("tecnico", u"ID", None));
         ___qtablewidgetitem8 = self.TB_Chamados_usuario.horizontalHeaderItem(1)
@@ -516,23 +434,19 @@ class Ui_tecnico(object):
         ___qtablewidgetitem9 = self.TB_Chamados_usuario.horizontalHeaderItem(2)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("tecnico", u"Prioridade", None));
         ___qtablewidgetitem10 = self.TB_Chamados_usuario.horizontalHeaderItem(3)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("tecnico", u"Titulo", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("tecnico", u"Servi\u00e7o", None));
         ___qtablewidgetitem11 = self.TB_Chamados_usuario.horizontalHeaderItem(4)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("tecnico", u"Descri\u00e7\u00e3o", None));
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("tecnico", u"Titulo", None));
         ___qtablewidgetitem12 = self.TB_Chamados_usuario.horizontalHeaderItem(5)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("tecnico", u"Usuario/abertura", None));
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("tecnico", u"Descri\u00e7\u00e3o", None));
         ___qtablewidgetitem13 = self.TB_Chamados_usuario.horizontalHeaderItem(6)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("tecnico", u"Usuario/fechamento", None));
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("tecnico", u"Usuario/abertura", None));
         ___qtablewidgetitem14 = self.TB_Chamados_usuario.horizontalHeaderItem(7)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("tecnico", u"Data de fechamento", None));
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("tecnico", u"Usuario/fechamento", None));
         ___qtablewidgetitem15 = self.TB_Chamados_usuario.horizontalHeaderItem(8)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("tecnico", u"Data de abertura", None));
-        self.BtnFecharChamado.setText(QCoreApplication.translate("tecnico", u"fechar", None))
-        self.pushButton_2.setText(QCoreApplication.translate("tecnico", u"procurar", None))
-        self.lineEdit_2.setPlaceholderText(QCoreApplication.translate("tecnico", u"Procurar", None))
-        self.label_9.setText(QCoreApplication.translate("tecnico", u"Status", None))
-        self.label_10.setText(QCoreApplication.translate("tecnico", u"Titulo", None))
-        self.label_11.setText(QCoreApplication.translate("tecnico", u"Descri\u00e7\u00e3o", None))
-        self.label_21.setText(QCoreApplication.translate("tecnico", u"Data", None))
+        ___qtablewidgetitem16 = self.TB_Chamados_usuario.horizontalHeaderItem(9)
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("tecnico", u"Data de fechamento", None));
+        self.BtnAbrirChamado.setText(QCoreApplication.translate("tecnico", u"Abrir", None))
     # retranslateUi
 

@@ -1,5 +1,23 @@
 from Conexao import conectar
+from enum import Enum
 
+class Status(Enum):
+    ABERTO = (0, "ABERTO")
+    EM_PROGRESSO = (1, "EM PROGRESSO")
+    FECHADO = (2, "FECHADO")
+
+    def __init__(self, index, description):
+        self.index = index
+        self.description = description
+
+class Prioridade(Enum):
+    BAIXA = (0, "BAIXA")
+    MEDIA = (1, "MEDIA")
+    ALTA = (2, "ALTA")
+
+    def __init__(self, index, description):
+        self.index = index
+        self.description = description
 
 class Chamado:
     def __init__(self,
@@ -7,8 +25,8 @@ class Chamado:
                  servico_idServico: int = None,
                  titulo: str = None,
                  descricao: str = None,
-                 prioridade: str = None,
-                 status: str = None,
+                 prioridade: Prioridade = None,
+                 status: Status = None,
                  dataAbertura: str = None,
                  dataDeFechamento: str = None,
                  usuario_abertura: int = None,
@@ -84,7 +102,7 @@ class Chamado:
     def buscar(self):
         con = conectar()
         cursor = con.cursor()
-        sql = 'SELECT * chamado'
+        sql = 'SELECT * FROM `chamado`'
         try:
             cursor.execute(sql)
             resultado = cursor.fetchall()
@@ -123,6 +141,16 @@ class Chamado:
             cursor.close()
             con.close()
 
+    def buscarPorServico(self,servico):
+        con = conectar()
+        cursor = con.cursor()
+        sql = f'select tipoServico from servico where idServico = {servico};'
+        cursor.execute(sql)
+        resultado = cursor.fetchall()
+        resultado = (resultado[0][0]).upper()
+        cursor.close()
+        con.close()
+        return resultado
 
 if __name__ == '__main__':
     lista_chamados = Chamado().buscar()

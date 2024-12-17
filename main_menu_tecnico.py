@@ -3,6 +3,7 @@ from PySide6 import QtWidgets
 from Telas.ui_menu_tecnico import Ui_tecnico
 from Entities.Chamados import Chamado
 from Entities.Usuario import Usuario
+from main_alterar_chamado import Main_alterar
 from Conexao import executar_sql
 
 class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
@@ -13,11 +14,13 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
         self.stackedWidget.setCurrentIndex(0)
         self.listaChamados = []
         self.listaUsuarios = []
+        self.chamadoSelecionado = None
 
         self.btn_perfil_aberto.setChecked(True)
         self.btn_perfil_aberto.clicked.connect(self.quandoBotaoPerfilPressionado)
         self.btn_chamados_aberto.clicked.connect(self.quandoBotaoChamadoPresionado)
         self.btn_usuarios.clicked.connect(self.quandoBotaoUsuariopressionado)
+        self.BtnAlterarChamado.clicked.connect(self.quandoBotaoAlterarPresionado)
 
         self.montarTabelaChamados()
         self.montarTabelaUsuarios()
@@ -72,12 +75,13 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             self.TB_Chamados_usuario.setItem(linha, 0, QtWidgets.QTableWidgetItem(str(chamado.idchamado)))
             self.TB_Chamados_usuario.setItem(linha, 1, QtWidgets.QTableWidgetItem(str(chamado.status)))
             self.TB_Chamados_usuario.setItem(linha, 2, QtWidgets.QTableWidgetItem(str(chamado.prioridade)))
-            self.TB_Chamados_usuario.setItem(linha, 3, QtWidgets.QTableWidgetItem(str(chamado.titulo)))
-            self.TB_Chamados_usuario.setItem(linha, 4, QtWidgets.QTableWidgetItem(str(chamado.descricao)))
-            self.TB_Chamados_usuario.setItem(linha, 5, QtWidgets.QTableWidgetItem(str(chamado.usuario_abertura)))
-            self.TB_Chamados_usuario.setItem(linha, 6, QtWidgets.QTableWidgetItem(str(chamado.usuario_atendimento)))
-            self.TB_Chamados_usuario.setItem(linha, 7, QtWidgets.QTableWidgetItem(str(chamado.dataAbertura)))
-            self.TB_Chamados_usuario.setItem(linha, 8, QtWidgets.QTableWidgetItem(str(chamado.dataDeFechamento)))
+            self.TB_Chamados_usuario.setItem(linha, 3, QtWidgets.QTableWidgetItem(str(chamado.buscarPorServico(chamado.servico_idServico))))
+            self.TB_Chamados_usuario.setItem(linha, 4, QtWidgets.QTableWidgetItem(str(chamado.titulo)))
+            self.TB_Chamados_usuario.setItem(linha, 5, QtWidgets.QTableWidgetItem(str(chamado.descricao)))
+            self.TB_Chamados_usuario.setItem(linha, 6, QtWidgets.QTableWidgetItem(str(Usuario.buscarPorUsuario(chamado.usuario_abertura))))
+            self.TB_Chamados_usuario.setItem(linha, 7, QtWidgets.QTableWidgetItem(str(Usuario.buscarPorUsuario(chamado.usuario_atendimento))))
+            self.TB_Chamados_usuario.setItem(linha, 8, QtWidgets.QTableWidgetItem(str(chamado.dataAbertura)))
+            self.TB_Chamados_usuario.setItem(linha, 9, QtWidgets.QTableWidgetItem(str(chamado.dataDeFechamento)))
             linha+=1
 
 
@@ -89,6 +93,16 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
 
     def quandoBotaoChamadoPresionado(self):
         self.stackedWidget.setCurrentIndex(2)
+
+    def quandoBotaoAlterarPresionado(self):
+        if self.TB_Chamados_usuario.currentRow() < 0:
+            print("sem itens selecinados")
+        else:
+            item = self.TB_Chamados_usuario.currentRow()
+            self.chamadoSelecionado = self.listaChamados[item]
+            chamado = self.chamadoSelecionado
+            self.alterar = Main_alterar(chamado)
+            self.alterar.show()
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

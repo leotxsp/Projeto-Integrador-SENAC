@@ -53,7 +53,7 @@ class Main_usuario(QtWidgets.QMainWindow, Ui_Usuario):
             self.TB_Chamados_usuario.setItem(linha, 1, QtWidgets.QTableWidgetItem(str(chamado.prioridade)))
             self.TB_Chamados_usuario.setItem(linha, 2, QtWidgets.QTableWidgetItem(str(chamado.titulo)))
             self.TB_Chamados_usuario.setItem(linha, 3, QtWidgets.QTableWidgetItem(str(chamado.descricao)))
-            self.TB_Chamados_usuario.setItem(linha, 4, QtWidgets.QTableWidgetItem(str(user.nome)))
+            self.TB_Chamados_usuario.setItem(linha, 4, QtWidgets.QTableWidgetItem(str(self.user.nome)))
             self.TB_Chamados_usuario.setItem(linha, 6, QtWidgets.QTableWidgetItem(str(chamado.dataAbertura)))
             self.TB_Chamados_usuario.setItem(linha, 7, QtWidgets.QTableWidgetItem(str(chamado.dataDeFechamento)))
             linha+=1
