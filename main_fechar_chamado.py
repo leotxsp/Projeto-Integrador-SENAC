@@ -7,6 +7,7 @@ from Entities.Chamados import *
 from Entities.Servico import Servico
 from PySide6 import QtWidgets
 from Telas.ui_Tela_fechar_chamado import Ui_fecharCadastro
+import Main_tecnico as tecnico
 
 class Main_fechar(QtWidgets.QMainWindow, Ui_fecharCadastro):
     def __init__(self, chamado = None):
@@ -39,6 +40,7 @@ class Main_fechar(QtWidgets.QMainWindow, Ui_fecharCadastro):
         data_fechamento = self.tratamentoTexto(data_fechamento_bruta)
         self.chamado.dataDeFechamento = data_fechamento
         self.chamado.alterar()
+        tecnico.montarTabelaChamados()
         self.close()
 
 
