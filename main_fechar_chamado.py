@@ -7,7 +7,8 @@ from Entities.Chamados import *
 from Entities.Servico import Servico
 from PySide6 import QtWidgets
 from Telas.ui_Tela_fechar_chamado import Ui_fecharCadastro
-import Main_tecnico as tecnico
+from main_menu_tecnico import Main_tecnico as tecnico
+tecnico.test()
 
 class Main_fechar(QtWidgets.QMainWindow, Ui_fecharCadastro):
     def __init__(self, chamado = None):
