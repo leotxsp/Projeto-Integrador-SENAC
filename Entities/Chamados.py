@@ -48,7 +48,7 @@ class Chamado:
         cursor = con.cursor()
         sql = (
             'INSERT INTO `chamado` (`servico_idServico`, `titulo`, `descricao`, `prioridade`, '
-            '`status`, `dataAbertura`, `dataDechamento`, `usuario_abertura`, `usuario_atendimento`) '
+            '`status`, `dataAbertura`, `dataDeFechamento`, `usuario_abertura`, `usuario_atendimento`) '
             'VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'
         )
         values = (self.servico_idServico, self.titulo, self.descricao, self.prioridade,
@@ -83,7 +83,7 @@ class Chamado:
         cursor = con.cursor()
         sql = (
             'UPDATE chamado SET servico_idServico=%s, titulo=%s, descricao=%s, prioridade=%s, '
-            'status=%s, dataAbertura=%s, dataDechamento=%s, usuario_abertura=%s, '
+            'status=%s, dataAbertura=%s, dataDeFechamento=%s, usuario_abertura=%s, '
             'usuario_atendimento=%s WHERE idchamado=%s'
         )
         values = (self.servico_idServico, self.titulo, self.descricao, self.prioridade,
@@ -151,6 +151,17 @@ class Chamado:
         cursor.close()
         con.close()
         return resultado
+
+    def fecharChamado(dataDeFechamento , idchamado):
+        con = conectar()
+        cursor = con.cursor()
+        print(dataDeFechamento,idchamado)
+        sql = 'UPDATE chamado SET dataDeFechamento = %s WHERE idchamado = %s'
+        print(sql, (dataDeFechamento, idchamado))
+        cursor.execute(sql, (dataDeFechamento, idchamado))
+        cursor.close()
+        con.close()
+        print("Chamado fechardo com sucesso.")
 
 if __name__ == '__main__':
     lista_chamados = Chamado().buscar()

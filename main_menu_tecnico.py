@@ -4,12 +4,14 @@ from Telas.ui_menu_tecnico import Ui_tecnico
 from Entities.Chamados import Chamado
 from Entities.Usuario import Usuario
 from main_alterar_chamado import Main_alterar
+from main_fechar_chamado import Main_fechar
 from Conexao import executar_sql
 
 class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
     def __init__(self, user = None):
         super(Main_tecnico,self).__init__()
         self.user = user
+        print(user)
         self.setupUi(self)
         self.stackedWidget.setCurrentIndex(0)
         self.listaChamados = []
@@ -21,6 +23,7 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
         self.btn_chamados_aberto.clicked.connect(self.quandoBotaoChamadoPresionado)
         self.btn_usuarios.clicked.connect(self.quandoBotaoUsuariopressionado)
         self.BtnAlterarChamado.clicked.connect(self.quandoBotaoAlterarPresionado)
+        self.BtnFecharChamado.clicked.connect(self.quandoBotaofecharPresionado)
 
         self.montarTabelaChamados()
         self.montarTabelaUsuarios()
@@ -103,6 +106,17 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             chamado = self.chamadoSelecionado
             self.alterar = Main_alterar(chamado)
             self.alterar.show()
+
+    def quandoBotaofecharPresionado(self):
+        if self.TB_Chamados_usuario.currentRow() < 0:
+            print("sem itens selecinados")
+        else:
+            item = self.TB_Chamados_usuario.currentRow()
+            self.chamadoSelecionado = self.listaChamados[item]
+            chamado = self.chamadoSelecionado
+            print(chamado.__dict__)
+            self.fechar = Main_fechar(chamado)
+            self.fechar.show()
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

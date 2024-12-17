@@ -1,4 +1,5 @@
 import sys
+from PySide6.QtCore import QDate
 from Entities.Chamados import *
 from Entities.Servico import Servico
 from PySide6 import QtWidgets
@@ -58,6 +59,12 @@ class Main_alterar(QtWidgets.QMainWindow, Ui_AlterarChamado):
         self.dateEdit_2.setDate(self.chamado.dataDeFechamento)
         self.TEdescricao.setText(self.chamado.descricao)
 
+
+
+    def tratamentoTexto(self, texto:tuple):
+        tratado = f"{texto[0]}-{texto[1]}-{texto[2]}"
+        return tratado
+
     def alterandoChamado(self):
         idchamado = self.chamado.idchamado
         servico = self.listaServicos[self.CBservico.currentIndex()].idServico
@@ -65,13 +72,17 @@ class Main_alterar(QtWidgets.QMainWindow, Ui_AlterarChamado):
         descricao = self.TEdescricao.toPlainText()
         status = self.CBStatus.currentData().name
         prioridade = self.CBprioridade.currentData().name
-        data_abertura = self.dateEdit.date()
-        data_fechamento = self.dateEdit_2.date()
+        data_abertura_bruta = self.dateEdit.date().getDate()
+        data_fechamento_bruta = self.dateEdit_2.date().getDate()
+        data_abertura = self.tratamentoTexto(data_abertura_bruta)
+        data_fechamento = self.tratamentoTexto(data_fechamento_bruta)
+
         usuarioAbertura = self.chamado.usuario_abertura
         usuarioFechamento = self.chamado.usuario_atendimento
         chamado = Chamado(idchamado,servico,titulo,descricao,prioridade,status,data_abertura,data_fechamento,usuarioAbertura,usuarioFechamento)
         print(chamado.__dict__)
-        return chamado
+        chamado.alterar()
+
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
     window = Main_alterar()

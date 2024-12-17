@@ -11,8 +11,8 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
         self.setupUi(self)
         self.BtnEntrar.clicked.connect(self.valida_login)
         self.usuario = None
-        self.edtSenha.setText("123")
-        self.edtUsuario.setText("leotxsp")
+        self.edtSenha.setText("senha123")
+        self.edtUsuario.setText("daniel.oliveira")
 
     def valida_login(self):
         senha = self.edtSenha.text()

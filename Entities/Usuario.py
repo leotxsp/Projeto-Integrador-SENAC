@@ -97,7 +97,6 @@ class Usuario:
                     setor=setor,
                     cargo=cargo
                 )
-                print(usuario)
                 return usuario
             return None
         except Exception as e:
@@ -108,12 +107,16 @@ class Usuario:
             con.close()
 
     def buscarPorUsuario(usuario):
+        if usuario is None:
+            return ""
         con = conectar()
         cursor = con.cursor()
         sql = f'select nome from usuario where idusuario = {usuario};'
         cursor.execute(sql)
         resultado = cursor.fetchall()
         resultado = (resultado[0][0]).upper()
+        if resultado == None:
+            resultado = ""
         cursor.close()
         con.close()
         return resultado
