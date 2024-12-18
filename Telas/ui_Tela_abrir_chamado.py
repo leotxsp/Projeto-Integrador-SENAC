@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Tela_abrir_chamadoCTQWlm.ui'
+## Form generated from reading UI file 'Tela_abrir_chamadoLGZKze.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -171,6 +171,7 @@ class Ui_AbrirChamado(object):
 
         self.dateEdit = QDateEdit(self.widget_2)
         self.dateEdit.setObjectName(u"dateEdit")
+        self.dateEdit.setCalendarPopup(True)
 
         self.horizontalLayout.addWidget(self.dateEdit)
 

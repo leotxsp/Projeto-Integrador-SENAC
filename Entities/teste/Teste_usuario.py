@@ -2,8 +2,6 @@ import sys
 from PySide6 import QtWidgets
 from Telas.ui_Login import Ui_login
 from Conexao import executar_sql
-from main_menu_usuario import Main_usuario
-from main_menu_tecnico import Main_tecnico
 from Entities.Usuario import Usuario
 class Main_login(QtWidgets.QMainWindow, Ui_login):
     def __init__(self):
@@ -20,12 +18,14 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
         usuario = Usuario.buscar_por_email_senha(login,senha)
         if usuario:
             if usuario.cargo.idCargo == 1:
+                from main_menu_tecnico import Main_tecnico
                 self.validou.setStyleSheet("color: rgb(100, 243, 29);")
                 self.validou.setText("Logado com sucesso")
                 self.tecnico = Main_tecnico(usuario)
                 self.tecnico.show()
                 self.close()
             else:
+                from main_menu_usuario import Main_usuario
                 self.validou.setStyleSheet("color: rgb(100, 243, 29);")
                 self.validou.setText("Logado com sucesso")
                 self.usuario = Main_usuario(usuario)

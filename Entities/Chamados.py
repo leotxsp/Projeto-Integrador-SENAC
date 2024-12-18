@@ -10,6 +10,11 @@ class Status(Enum):
         self.index = index
         self.description = description
 
+    def procurarStatusPorIndex(index):
+        if 0 <= index < len(Status):
+            return list(Status)[index]
+        raise ValueError("Valor de index invalido")
+
 class Prioridade(Enum):
     BAIXA = (0, "BAIXA")
     MEDIA = (1, "MEDIA")
@@ -18,6 +23,12 @@ class Prioridade(Enum):
     def __init__(self, index, description):
         self.index = index
         self.description = description
+
+    def procurarPrioridadePorIndex(index):
+        if 0 <= index < len(Prioridade):
+            return list(Prioridade)[index]
+        raise ValueError("Valor de index invalido")
+
 
 class Chamado:
     def __init__(self,
@@ -83,7 +94,7 @@ class Chamado:
         cursor = con.cursor()
         sql = (
             'UPDATE chamado SET servico_idServico=%s, titulo=%s, descricao=%s, prioridade=%s, '
-            'status=%s, dataAbertura=%s, dataDechamento=%s, usuario_abertura=%s, '
+            'status=%s, dataAbertura=%s, dataDeFechamento=%s, usuario_abertura=%s, '
             'usuario_atendimento=%s WHERE idchamado=%s'
         )
         values = (self.servico_idServico, self.titulo, self.descricao, self.prioridade,
@@ -157,7 +168,7 @@ class Chamado:
         con = conectar()
         cursor = con.cursor()
         print(dataDeFechamento,idchamado)
-        sql = 'UPDATE chamado SET dataDechamento = %s WHERE idchamado = %s'
+        sql = 'UPDATE chamado SET dataDeFechamento = %s WHERE idchamado = %s'
         print(sql, (dataDeFechamento, idchamado))
         cursor.execute(sql, (dataDeFechamento, idchamado))
         cursor.close()

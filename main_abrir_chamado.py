@@ -51,7 +51,7 @@ class Main_Abrir(QtWidgets.QMainWindow, Ui_AbrirChamado):
     def preencher(self):
         self.preencherComboBox()
         self.edtTitulo.setText(self.chamado.titulo)
-        self.dateEdit.setDate(self.chamado.dataAbertura)
+        self.dateEdit.setDate(QDate.currentDate())
         self.TEdescricao.setText(self.chamado.descricao)
 
 

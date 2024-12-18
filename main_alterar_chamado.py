@@ -49,7 +49,6 @@ class Main_alterar(QtWidgets.QMainWindow, Ui_AlterarChamado):
 
 
 
-
     def preencher(self):
         self.preencherComboBox()
         status_enum = Status[self.chamado.status]
@@ -60,7 +59,6 @@ class Main_alterar(QtWidgets.QMainWindow, Ui_AlterarChamado):
         self.dateEdit.setDate(self.chamado.dataAbertura)
         self.dateEdit_2.setDate(self.chamado.dataDeFechamento)
         self.TEdescricao.setText(self.chamado.descricao)
-
 
 
     def tratamentoTexto(self, texto:tuple):

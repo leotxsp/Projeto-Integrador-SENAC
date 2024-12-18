@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MenuGWlirr.ui'
+## Form generated from reading UI file 'MenuBhvjAG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -250,6 +250,8 @@ class Ui_tecnico(object):
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.pushButton = QPushButton(self.pgUsuarios)
         self.pushButton.setObjectName(u"pushButton")
+        icon4 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.SystemSearch))
+        self.pushButton.setIcon(icon4)
 
         self.horizontalLayout_2.addWidget(self.pushButton)
 
@@ -291,10 +293,10 @@ class Ui_tecnico(object):
 
         self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
 
-        self.BtnAbrirChamado_2 = QPushButton(self.pgUsuarios)
-        self.BtnAbrirChamado_2.setObjectName(u"BtnAbrirChamado_2")
+        self.BtnCadastrarUsuario = QPushButton(self.pgUsuarios)
+        self.BtnCadastrarUsuario.setObjectName(u"BtnCadastrarUsuario")
 
-        self.gridLayout_2.addWidget(self.BtnAbrirChamado_2, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.BtnCadastrarUsuario, 0, 2, 1, 1)
 
         self.stackedWidget.addWidget(self.pgUsuarios)
         self.pgChamados = QWidget()
@@ -419,7 +421,7 @@ class Ui_tecnico(object):
         ___qtablewidgetitem5.setText(QCoreApplication.translate("tecnico", u"SETOR", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("tecnico", u"CARGO", None));
-        self.BtnAbrirChamado_2.setText(QCoreApplication.translate("tecnico", u"Abrir", None))
+        self.BtnCadastrarUsuario.setText(QCoreApplication.translate("tecnico", u"Cadastrar", None))
         self.BtnFecharChamado.setText(QCoreApplication.translate("tecnico", u"fechar", None))
         self.BtnAlterarChamado.setText(QCoreApplication.translate("tecnico", u"Alterar", None))
         self.pushButton_2.setText(QCoreApplication.translate("tecnico", u"procurar", None))

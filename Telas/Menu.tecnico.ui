@@ -470,6 +470,9 @@
                   <property name="text">
                    <string/>
                   </property>
+                  <property name="icon">
+                   <iconset theme="QIcon::ThemeIcon::SystemSearch"/>
+                  </property>
                  </widget>
                 </item>
                 <item>
@@ -550,9 +553,9 @@
                </spacer>
               </item>
               <item row="0" column="2">
-               <widget class="QPushButton" name="BtnAbrirChamado_2">
+               <widget class="QPushButton" name="BtnCadastrarUsuario">
                 <property name="text">
-                 <string>Abrir</string>
+                 <string>Cadastrar</string>
                 </property>
                </widget>
               </item>

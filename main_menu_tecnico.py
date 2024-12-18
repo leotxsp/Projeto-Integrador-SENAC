@@ -6,6 +6,7 @@ from Entities.Usuario import Usuario
 from main_alterar_chamado import Main_alterar
 from main_fechar_chamado import Main_fechar
 from main_abrir_chamado import Main_Abrir
+from main_cadastro_usuario import Main_cadastro_usuario
 from Conexao import executar_sql
 
 class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
@@ -27,6 +28,9 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
         self.BtnAlterarChamado.clicked.connect(self.quandoBotaoAlterarPresionado)
         self.BtnFecharChamado.clicked.connect(self.quandoBotaoFecharPresionado)
         self.BtnAbrirChamado.clicked.connect(self.quandoBotaoAbrirPresionado)
+        self.BtnCadastrarUsuario.clicked.connect(self.quandoBotaoCadastrarUsuario)
+        self.BtnEditar.clicked.connect(self.quandoBotaoEditarUsuarioPressionado)
+        self.BtnLogoff.clicked.connect(self.quandoBotaLogoffPresionado)
 
         self.montarTabelaChamados()
         self.montarTabelaUsuarios()
@@ -100,6 +104,16 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
     def quandoBotaoChamadoPresionado(self):
         self.stackedWidget.setCurrentIndex(2)
 
+    def quandoBotaoCadastrarUsuario(self):
+        self.cadastrar = Main_cadastro_usuario()
+        self.cadastrar.show()
+        self.cadastrar.closed.connect(self.montarTabelaUsuarios)
+
+    def quandoBotaoEditarUsuarioPressionado(self):
+        self.editar = Main_cadastro_usuario(self.user)
+        self.editar.show()
+        self.editar.closed.connect(self.montarTabelaUsuarios)
+
     def quandoBotaoAlterarPresionado(self):
         if self.TB_Chamados_usuario.currentRow() < 0:
             print("sem itens selecinados")
@@ -118,8 +132,7 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             item = self.TB_Chamados_usuario.currentRow()
             self.chamadoSelecionado = self.listaChamados[item]
             chamado = self.chamadoSelecionado
-            print(chamado.__dict__)
-            self.fechar = Main_fechar(chamado)
+            self.fechar = Main_fechar(chamado,self.user)
             self.fechar.show()
             self.fechar.closed.connect(self.montarTabelaChamados)
 
@@ -127,6 +140,12 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             self.abrir = Main_Abrir(self.user)
             self.abrir.show()
             self.abrir.closed.connect(self.montarTabelaChamados)
+    def quandoBotaLogoffPresionado(self):
+        from Entities.teste.Teste_usuario import Main_login
+        self.login = Main_login()
+        self.login.show()
+        self.close()
+
 
 
 if __name__ == '__main__':
