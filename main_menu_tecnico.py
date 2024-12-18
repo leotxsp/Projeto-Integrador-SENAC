@@ -5,6 +5,7 @@ from Entities.Chamados import Chamado
 from Entities.Usuario import Usuario
 from main_alterar_chamado import Main_alterar
 from main_fechar_chamado import Main_fechar
+from main_abrir_chamado import Main_Abrir
 from Conexao import executar_sql
 
 class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
@@ -22,8 +23,10 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
         self.btn_perfil_aberto.clicked.connect(self.quandoBotaoPerfilPressionado)
         self.btn_chamados_aberto.clicked.connect(self.quandoBotaoChamadoPresionado)
         self.btn_usuarios.clicked.connect(self.quandoBotaoUsuariopressionado)
+
         self.BtnAlterarChamado.clicked.connect(self.quandoBotaoAlterarPresionado)
-        self.BtnFecharChamado.clicked.connect(self.quandoBotaofecharPresionado)
+        self.BtnFecharChamado.clicked.connect(self.quandoBotaoFecharPresionado)
+        self.BtnAbrirChamado.clicked.connect(self.quandoBotaoAbrirPresionado)
 
         self.montarTabelaChamados()
         self.montarTabelaUsuarios()
@@ -106,8 +109,9 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             chamado = self.chamadoSelecionado
             self.alterar = Main_alterar(chamado)
             self.alterar.show()
+            self.alterar.closed.connect(self.montarTabelaChamados)
 
-    def quandoBotaofecharPresionado(self):
+    def quandoBotaoFecharPresionado(self):
         if self.TB_Chamados_usuario.currentRow() < 0:
             print("sem itens selecinados")
         else:
@@ -117,6 +121,13 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             print(chamado.__dict__)
             self.fechar = Main_fechar(chamado)
             self.fechar.show()
+            self.fechar.closed.connect(self.montarTabelaChamados)
+
+    def quandoBotaoAbrirPresionado(self):
+            self.abrir = Main_Abrir(self.user)
+            self.abrir.show()
+            self.abrir.closed.connect(self.montarTabelaChamados)
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

@@ -83,12 +83,13 @@ class Chamado:
         cursor = con.cursor()
         sql = (
             'UPDATE chamado SET servico_idServico=%s, titulo=%s, descricao=%s, prioridade=%s, '
-            'status=%s, dataAbertura=%s, dataDeFechamento=%s, usuario_abertura=%s, '
+            'status=%s, dataAbertura=%s, dataDechamento=%s, usuario_abertura=%s, '
             'usuario_atendimento=%s WHERE idchamado=%s'
         )
         values = (self.servico_idServico, self.titulo, self.descricao, self.prioridade,
                   self.status, self.dataAbertura, self.dataDeFechamento,
                   self.usuario_abertura, self.usuario_atendimento, self.idchamado)
+        print(sql, values)
         try:
             cursor.execute(sql, values)
             con.commit()
@@ -156,7 +157,7 @@ class Chamado:
         con = conectar()
         cursor = con.cursor()
         print(dataDeFechamento,idchamado)
-        sql = 'UPDATE chamado SET dataDeFechamento = %s WHERE idchamado = %s'
+        sql = 'UPDATE chamado SET dataDechamento = %s WHERE idchamado = %s'
         print(sql, (dataDeFechamento, idchamado))
         cursor.execute(sql, (dataDeFechamento, idchamado))
         cursor.close()

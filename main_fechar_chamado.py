@@ -1,16 +1,14 @@
 import sys
 import datetime
-from cgi import print_environ_usage
-
 from PySide6.QtCore import QDate
 from Entities.Chamados import *
+from PySide6.QtCore import Signal
 from Entities.Servico import Servico
 from PySide6 import QtWidgets
 from Telas.ui_Tela_fechar_chamado import Ui_fecharCadastro
-from main_menu_tecnico import Main_tecnico as tecnico
-tecnico.test()
 
 class Main_fechar(QtWidgets.QMainWindow, Ui_fecharCadastro):
+    closed = Signal()
     def __init__(self, chamado = None):
         super(Main_fechar, self).__init__()
         self.setupUi(self)
@@ -36,15 +34,15 @@ class Main_fechar(QtWidgets.QMainWindow, Ui_fecharCadastro):
         return tratado
 
     def alterandoChamado(self):
-
         data_fechamento_bruta = self.dateEdit_2.date().getDate()
         data_fechamento = self.tratamentoTexto(data_fechamento_bruta)
         self.chamado.dataDeFechamento = data_fechamento
         self.chamado.alterar()
-        tecnico.montarTabelaChamados()
         self.close()
 
-
+    def closeEvent(self, event):
+        self.closed.emit()
+        super().closeEvent(event)
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

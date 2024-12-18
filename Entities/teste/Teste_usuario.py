@@ -12,7 +12,7 @@ class Main_login(QtWidgets.QMainWindow, Ui_login):
         self.BtnEntrar.clicked.connect(self.valida_login)
         self.usuario = None
         self.edtSenha.setText("senha123")
-        self.edtUsuario.setText("daniel.oliveira")
+        self.edtUsuario.setText("daniel.oliveira ")
 
     def valida_login(self):
         senha = self.edtSenha.text()
