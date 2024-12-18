@@ -3,17 +3,19 @@ from PySide6 import QtWidgets
 from Telas.ui_menu_tecnico import Ui_tecnico
 from Entities.Chamados import Chamado
 from Entities.Usuario import Usuario
+from Entities.Setor import Setor
+from Entities.Cargo import Cargo
 from main_alterar_chamado import Main_alterar
 from main_fechar_chamado import Main_fechar
 from main_abrir_chamado import Main_Abrir
 from main_cadastro_usuario import Main_cadastro_usuario
+from PySide6.QtWidgets import QMessageBox
 from Conexao import executar_sql
 
 class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
     def __init__(self, user = None):
         super(Main_tecnico,self).__init__()
         self.user = user
-        print(user)
         self.setupUi(self)
         self.stackedWidget.setCurrentIndex(0)
         self.listaChamados = []
@@ -31,6 +33,7 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
         self.BtnCadastrarUsuario.clicked.connect(self.quandoBotaoCadastrarUsuario)
         self.BtnEditar.clicked.connect(self.quandoBotaoEditarUsuarioPressionado)
         self.BtnLogoff.clicked.connect(self.quandoBotaLogoffPresionado)
+        self.BtnAtualizarUsuario.clicked.connect(self.quandoBotaoAtualizarUsuarioPressionado)
 
         self.montarTabelaChamados()
         self.montarTabelaUsuarios()
@@ -116,7 +119,7 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
 
     def quandoBotaoAlterarPresionado(self):
         if self.TB_Chamados_usuario.currentRow() < 0:
-            print("sem itens selecinados")
+            QMessageBox.warning(self, "Erro", "nenhum item selecionado")
         else:
             item = self.TB_Chamados_usuario.currentRow()
             self.chamadoSelecionado = self.listaChamados[item]
@@ -127,7 +130,7 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
 
     def quandoBotaoFecharPresionado(self):
         if self.TB_Chamados_usuario.currentRow() < 0:
-            print("sem itens selecinados")
+            QMessageBox.warning(self, "Erro", "nenhum item selecionado")
         else:
             item = self.TB_Chamados_usuario.currentRow()
             self.chamadoSelecionado = self.listaChamados[item]
@@ -135,6 +138,20 @@ class Main_tecnico(QtWidgets.QMainWindow, Ui_tecnico):
             self.fechar = Main_fechar(chamado,self.user)
             self.fechar.show()
             self.fechar.closed.connect(self.montarTabelaChamados)
+
+    def quandoBotaoAtualizarUsuarioPressionado(self):
+        if self.tableWidget.currentRow() < 0:
+            QMessageBox.warning(self, "Erro", "nenhum item selecionado")
+        else:
+            item = self.tableWidget.currentRow()
+            usuarioSelecionado = self.listaUsuarios[item]
+            setor = Setor.buscarUm(usuarioSelecionado.setor)
+            cargo = Cargo.buscarUm(usuarioSelecionado.cargo)
+            usuarioSelecionado.setor = setor
+            usuarioSelecionado.cargo = cargo
+            self.atualizarUsuario = Main_cadastro_usuario(usuarioSelecionado)
+            self.atualizarUsuario.show()
+            self.atualizarUsuario.closed.connect(self.montarTabelaUsuarios)
 
     def quandoBotaoAbrirPresionado(self):
             self.abrir = Main_Abrir(self.user)

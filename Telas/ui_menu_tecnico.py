@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'MenuBhvjAG.ui'
+## Form generated from reading UI file 'MenuDWUGhI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -246,27 +246,6 @@ class Ui_tecnico(object):
         self.pgUsuarios.setObjectName(u"pgUsuarios")
         self.gridLayout_2 = QGridLayout(self.pgUsuarios)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.pushButton = QPushButton(self.pgUsuarios)
-        self.pushButton.setObjectName(u"pushButton")
-        icon4 = QIcon(QIcon.fromTheme(QIcon.ThemeIcon.SystemSearch))
-        self.pushButton.setIcon(icon4)
-
-        self.horizontalLayout_2.addWidget(self.pushButton)
-
-        self.lineEdit = QLineEdit(self.pgUsuarios)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.horizontalLayout_2.addWidget(self.lineEdit)
-
-
-        self.gridLayout_2.addLayout(self.horizontalLayout_2, 0, 1, 1, 1)
-
-        self.horizontalSpacer_2 = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 3, 1, 1)
-
         self.tableWidget = QTableWidget(self.pgUsuarios)
         if (self.tableWidget.columnCount() < 7):
             self.tableWidget.setColumnCount(7)
@@ -289,14 +268,23 @@ class Ui_tecnico(object):
 
         self.gridLayout_2.addWidget(self.tableWidget, 1, 0, 1, 4)
 
+        self.BtnCadastrarUsuario = QPushButton(self.pgUsuarios)
+        self.BtnCadastrarUsuario.setObjectName(u"BtnCadastrarUsuario")
+
+        self.gridLayout_2.addWidget(self.BtnCadastrarUsuario, 0, 1, 1, 1)
+
+        self.horizontalSpacer_2 = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.gridLayout_2.addItem(self.horizontalSpacer_2, 0, 3, 1, 1)
+
         self.horizontalSpacer = QSpacerItem(189, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
         self.gridLayout_2.addItem(self.horizontalSpacer, 0, 0, 1, 1)
 
-        self.BtnCadastrarUsuario = QPushButton(self.pgUsuarios)
-        self.BtnCadastrarUsuario.setObjectName(u"BtnCadastrarUsuario")
+        self.BtnAtualizarUsuario = QPushButton(self.pgUsuarios)
+        self.BtnAtualizarUsuario.setObjectName(u"BtnAtualizarUsuario")
 
-        self.gridLayout_2.addWidget(self.BtnCadastrarUsuario, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.BtnAtualizarUsuario, 0, 2, 1, 1)
 
         self.stackedWidget.addWidget(self.pgUsuarios)
         self.pgChamados = QWidget()
@@ -405,8 +393,6 @@ class Ui_tecnico(object):
         self.LB_setor.setText(QCoreApplication.translate("tecnico", u"setor", None))
         self.BtnEditar.setText(QCoreApplication.translate("tecnico", u"Editar", None))
         self.BtnLogoff.setText(QCoreApplication.translate("tecnico", u"Logoff", None))
-        self.pushButton.setText("")
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("tecnico", u"Procurar", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("tecnico", u"ID", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -422,6 +408,7 @@ class Ui_tecnico(object):
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(6)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("tecnico", u"CARGO", None));
         self.BtnCadastrarUsuario.setText(QCoreApplication.translate("tecnico", u"Cadastrar", None))
+        self.BtnAtualizarUsuario.setText(QCoreApplication.translate("tecnico", u"ATUALIZAR", None))
         self.BtnFecharChamado.setText(QCoreApplication.translate("tecnico", u"fechar", None))
         self.BtnAlterarChamado.setText(QCoreApplication.translate("tecnico", u"Alterar", None))
         self.pushButton_2.setText(QCoreApplication.translate("tecnico", u"procurar", None))

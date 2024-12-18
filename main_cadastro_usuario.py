@@ -1,4 +1,6 @@
 import sys
+from calendar import error
+
 from PySide6 import QtWidgets
 from PySide6.QtCore import Signal
 from Telas.ui_menu_cadastro_usuario import Ui_cadastroUsuario
@@ -18,9 +20,11 @@ class Main_cadastro_usuario(QtWidgets.QMainWindow, Ui_cadastroUsuario):
         self.lista_setor = []
         self.setor_combo = []
         self.montar_combo_boxes()
-        self.BTcadastrar.clicked.connect(self.incluir)
         if user != None:
             self.preencher()
+            self.BTcadastrar.clicked.connect(self.atualizar)
+        else:
+            self.BTcadastrar.clicked.connect(self.incluir)
 
     def preencher(self):
         self.BTcadastrar.setText("Atualizar")
@@ -51,6 +55,38 @@ class Main_cadastro_usuario(QtWidgets.QMainWindow, Ui_cadastroUsuario):
             self.close()
         except Exception as erro:
             QMessageBox.warning(self, "Erro inexperado", "Ocorreu um erro ao cadastrar o usuario.", erro)
+
+    def atualizar(self):
+        try:
+            if not self.validar_campos():
+                return
+            idusuario = self.user.IDusuario
+            login = self.LElogin.text()
+            nome = self.LEnome.text()
+            email = self.LEemail.text()
+            senha = self.LEsenha.text()
+            index_cargo = self.CB_Cargo.currentIndex()
+            index_setor = self.CB_Setor.currentIndex()
+            cargo = self.lista_cargo[index_cargo]
+            setor = self.lista_setor[index_setor]
+            usuario = Usuario(idusuario, login=login, nome=nome, email=email, senha=senha, setor=setor.idsetor, cargo=cargo.idCargo)
+            usuario.alterar()
+            QMessageBox.warning(self, "SUCESSO", "Usuario cadastrado com sucesso.")
+            self.close()
+        except error as erro:
+            QMessageBox.warning(self, "Erro inexperado", "Ocorreu um erro ao cadastrar o usuario.",erro)
+
+    def criar_usuario(self):
+        login = self.LElogin.text()
+        nome = self.LEnome.text()
+        email = self.LEemail.text()
+        senha = self.LEsenha.text()
+        index_cargo = self.CB_Cargo.currentIndex()
+        index_setor = self.CB_Setor.currentIndex()
+        cargo = self.lista_cargo[index_cargo]
+        setor = self.lista_setor[index_setor]
+
+        return Usuario(0, login=login, nome=nome, email=email, senha=senha, setor=setor, cargo=cargo)
 
     def validar_campos(self):
         if not self.LElogin.text():

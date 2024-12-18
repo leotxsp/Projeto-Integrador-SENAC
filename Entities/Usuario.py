@@ -122,7 +122,7 @@ class Usuario:
         return resultado
 
 if __name__ == '__main__':
-    login = "alice.silva"
+    login = "eduarda.santos"
     senha = "senha123"
 
     usuario = Usuario.buscar_por_email_senha(login, senha)
