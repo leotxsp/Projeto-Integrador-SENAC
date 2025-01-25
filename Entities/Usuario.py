@@ -78,7 +78,63 @@ class Usuario:
         con.close()
         return lista
 
-# if __name__ == '__main__':
-#     lista = (Usuario().buscar())
-#     for i in lista:
-#         print(i.IDusuario)
+    def buscar_por_email_senha(login: str, senha: str):
+        con = conectar()
+        cursor = con.cursor()
+        sql = 'SELECT * FROM `usuario` WHERE `login` = %s AND `senha` = %s'
+        try:
+            cursor.execute(sql, (login, senha))
+            resultado = cursor.fetchone()
+            if resultado != None:
+                setor = Setor.buscarUm(resultado[5])
+                cargo = Cargo.buscarUm(resultado[6])
+                usuario = Usuario(
+                    IDusuario=resultado[0],
+                    login=resultado[1],
+                    senha=resultado[2],
+                    nome=resultado[3],
+                    email=resultado[4],
+                    setor=setor,
+                    cargo=cargo
+                )
+                return usuario
+            return None
+        except Exception as e:
+            con.rollback()
+            print("Erro ao buscar usuário:", e)
+        finally:
+            cursor.close()
+            con.close()
+
+    def buscarPorUsuario(usuario):
+        if usuario is None:
+            return ""
+        con = conectar()
+        cursor = con.cursor()
+        sql = f'select nome from usuario where idusuario = {usuario};'
+        cursor.execute(sql)
+        resultado = cursor.fetchall()
+        resultado = (resultado[0][0]).upper()
+        if resultado == None:
+            resultado = ""
+        cursor.close()
+        con.close()
+        return resultado
+
+if __name__ == '__main__':
+    login = "eduarda.santos"
+    senha = "senha123"
+
+    usuario = Usuario.buscar_por_email_senha(login, senha)
+    print(usuario)
+
+    if usuario:
+        print("Usuário encontrado:")
+        print(f"ID: {usuario.IDusuario}")
+        print(f"Login: {usuario.login}")
+        print(f"Nome: {usuario.nome}")
+        print(f"Email: {usuario.email}")
+        print(f"Setor: {usuario.setor.idsetor}")  # Acessando o atributo 'nome' do objeto Setor
+        print(f"Cargo: {usuario.cargo.idCargo}")  # Acessando o atributo 'nome' do objeto Cargo
+    else:
+        print("Usuário não encontrado ou credenciais inválidas.")

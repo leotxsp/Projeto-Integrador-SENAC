@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AlterarCadastro</class>
- <widget class="QMainWindow" name="AlterarCadastro">
+ <class>AlterarChamado</class>
+ <widget class="QMainWindow" name="AlterarChamado">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,7 +17,7 @@
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <layout class="QVBoxLayout" name="verticalLayout">
-      <item alignment="">
+      <item>
        <widget class="QLabel" name="label">
         <property name="text">
          <string>Descrição de entrada</string>
@@ -140,7 +140,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="CBStatus_2">
+          <widget class="QComboBox" name="CBStatus">
            <property name="minimumSize">
             <size>
              <width>150</width>
@@ -199,7 +199,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QComboBox" name="CBStatus">
+          <widget class="QComboBox" name="CBprioridade">
            <property name="minimumSize">
             <size>
              <width>150</width>
@@ -216,6 +216,65 @@
          </item>
          <item>
           <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_6">
+           <property name="text">
+            <string>serviço</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_8">
+           <property name="orientation">
+            <enum>Qt::Orientation::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QComboBox" name="CBservico">
+           <property name="minimumSize">
+            <size>
+             <width>150</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>150</width>
+             <height>16777215</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_10">
            <property name="orientation">
             <enum>Qt::Orientation::Horizontal</enum>
            </property>
@@ -344,7 +403,7 @@
       <property name="bottomMargin">
        <number>0</number>
       </property>
-      <item alignment="">
+      <item>
        <widget class="QLabel" name="label_2">
         <property name="text">
          <string>Descrição de fechamento</string>

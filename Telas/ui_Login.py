@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'LoginuOhFMZ.ui'
+## Form generated from reading UI file 'LoginoHsqRI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -122,6 +122,9 @@ class Ui_login(object):
     def retranslateUi(self, login):
         login.setWindowTitle(QCoreApplication.translate("login", u"Login", None))
         self.BtnEntrar.setText(QCoreApplication.translate("login", u"Entrar", None))
+#if QT_CONFIG(shortcut)
+        self.BtnEntrar.setShortcut(QCoreApplication.translate("login", u"Return, Enter", None))
+#endif // QT_CONFIG(shortcut)
         self.label_3.setText(QCoreApplication.translate("login", u"Usuario", None))
         self.label.setText(QCoreApplication.translate("login", u"Senha", None))
         self.validou.setText("")

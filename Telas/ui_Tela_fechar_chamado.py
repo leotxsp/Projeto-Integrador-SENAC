@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Tela_alterar_chamadoNADTsF.ui'
+## Form generated from reading UI file 'Tela_fechar_chamadoXypDXL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.8.0
 ##
@@ -15,17 +15,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QDateEdit, QGridLayout,
-    QHBoxLayout, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QSpacerItem, QTextEdit,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QDateEdit, QGridLayout, QHBoxLayout,
+    QLabel, QMainWindow, QPushButton, QSizePolicy,
+    QSpacerItem, QTextEdit, QVBoxLayout, QWidget)
 
-class Ui_AlterarChamado(object):
-    def setupUi(self, AlterarChamado):
-        if not AlterarChamado.objectName():
-            AlterarChamado.setObjectName(u"AlterarChamado")
-        AlterarChamado.resize(800, 600)
-        self.centralwidget = QWidget(AlterarChamado)
+class Ui_fecharCadastro(object):
+    def setupUi(self, fecharCadastro):
+        if not fecharCadastro.objectName():
+            fecharCadastro.setObjectName(u"fecharCadastro")
+        fecharCadastro.resize(800, 600)
+        self.centralwidget = QWidget(fecharCadastro)
         self.centralwidget.setObjectName(u"centralwidget")
         self.gridLayout = QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -64,10 +63,10 @@ class Ui_AlterarChamado(object):
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_6)
 
-        self.edtTitulo = QLineEdit(self.widget)
-        self.edtTitulo.setObjectName(u"edtTitulo")
+        self.LBtitulo = QLabel(self.widget)
+        self.LBtitulo.setObjectName(u"LBtitulo")
 
-        self.horizontalLayout_5.addWidget(self.edtTitulo)
+        self.horizontalLayout_5.addWidget(self.LBtitulo)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -89,12 +88,10 @@ class Ui_AlterarChamado(object):
 
         self.horizontalLayout_8.addItem(self.horizontalSpacer_9)
 
-        self.CBStatus = QComboBox(self.widget)
-        self.CBStatus.setObjectName(u"CBStatus")
-        self.CBStatus.setMinimumSize(QSize(150, 0))
-        self.CBStatus.setMaximumSize(QSize(150, 16777215))
+        self.LBstatus = QLabel(self.widget)
+        self.LBstatus.setObjectName(u"LBstatus")
 
-        self.horizontalLayout_8.addWidget(self.CBStatus)
+        self.horizontalLayout_8.addWidget(self.LBstatus)
 
         self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -114,12 +111,10 @@ class Ui_AlterarChamado(object):
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer_5)
 
-        self.CBprioridade = QComboBox(self.widget)
-        self.CBprioridade.setObjectName(u"CBprioridade")
-        self.CBprioridade.setMinimumSize(QSize(150, 0))
-        self.CBprioridade.setMaximumSize(QSize(150, 16777215))
+        self.LBPrioridade = QLabel(self.widget)
+        self.LBPrioridade.setObjectName(u"LBPrioridade")
 
-        self.horizontalLayout_4.addWidget(self.CBprioridade)
+        self.horizontalLayout_4.addWidget(self.LBPrioridade)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -139,12 +134,10 @@ class Ui_AlterarChamado(object):
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_8)
 
-        self.CBservico = QComboBox(self.widget)
-        self.CBservico.setObjectName(u"CBservico")
-        self.CBservico.setMinimumSize(QSize(150, 0))
-        self.CBservico.setMaximumSize(QSize(150, 16777215))
+        self.LBservico = QLabel(self.widget)
+        self.LBservico.setObjectName(u"LBservico")
 
-        self.horizontalLayout_6.addWidget(self.CBservico)
+        self.horizontalLayout_6.addWidget(self.LBservico)
 
         self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -164,10 +157,10 @@ class Ui_AlterarChamado(object):
 
         self.horizontalLayout.addItem(self.horizontalSpacer_11)
 
-        self.dateEdit = QDateEdit(self.widget)
-        self.dateEdit.setObjectName(u"dateEdit")
+        self.LBdataAbertura = QLabel(self.widget)
+        self.LBdataAbertura.setObjectName(u"LBdataAbertura")
 
-        self.horizontalLayout.addWidget(self.dateEdit)
+        self.horizontalLayout.addWidget(self.LBdataAbertura)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Minimum)
 
@@ -225,23 +218,28 @@ class Ui_AlterarChamado(object):
 
         self.gridLayout.addWidget(self.pushButton, 1, 1, 1, 1)
 
-        AlterarChamado.setCentralWidget(self.centralwidget)
+        fecharCadastro.setCentralWidget(self.centralwidget)
 
-        self.retranslateUi(AlterarChamado)
+        self.retranslateUi(fecharCadastro)
 
-        QMetaObject.connectSlotsByName(AlterarChamado)
+        QMetaObject.connectSlotsByName(fecharCadastro)
     # setupUi
 
-    def retranslateUi(self, AlterarChamado):
-        AlterarChamado.setWindowTitle(QCoreApplication.translate("AlterarChamado", u"ALTERAR", None))
-        self.label.setText(QCoreApplication.translate("AlterarChamado", u"Descri\u00e7\u00e3o de entrada", None))
-        self.label_10.setText(QCoreApplication.translate("AlterarChamado", u"Titulo", None))
-        self.label_12.setText(QCoreApplication.translate("AlterarChamado", u"Status", None))
-        self.label_3.setText(QCoreApplication.translate("AlterarChamado", u"Prioridade", None))
-        self.label_6.setText(QCoreApplication.translate("AlterarChamado", u"servi\u00e7o", None))
-        self.label_4.setText(QCoreApplication.translate("AlterarChamado", u"Data de abertura", None))
-        self.label_5.setText(QCoreApplication.translate("AlterarChamado", u"Data de fechamento", None))
-        self.label_2.setText(QCoreApplication.translate("AlterarChamado", u"Descri\u00e7\u00e3o de fechamento", None))
-        self.pushButton.setText(QCoreApplication.translate("AlterarChamado", u"Confirmar", None))
+    def retranslateUi(self, fecharCadastro):
+        fecharCadastro.setWindowTitle(QCoreApplication.translate("fecharCadastro", u"FECHAR CHAMADO", None))
+        self.label.setText(QCoreApplication.translate("fecharCadastro", u"Descri\u00e7\u00e3o de entrada", None))
+        self.label_10.setText(QCoreApplication.translate("fecharCadastro", u"Titulo", None))
+        self.LBtitulo.setText(QCoreApplication.translate("fecharCadastro", u"TextLabel", None))
+        self.label_12.setText(QCoreApplication.translate("fecharCadastro", u"Status", None))
+        self.LBstatus.setText(QCoreApplication.translate("fecharCadastro", u"TextLabel", None))
+        self.label_3.setText(QCoreApplication.translate("fecharCadastro", u"Prioridade", None))
+        self.LBPrioridade.setText(QCoreApplication.translate("fecharCadastro", u"TextLabel", None))
+        self.label_6.setText(QCoreApplication.translate("fecharCadastro", u"servi\u00e7o", None))
+        self.LBservico.setText(QCoreApplication.translate("fecharCadastro", u"TextLabel", None))
+        self.label_4.setText(QCoreApplication.translate("fecharCadastro", u"Data de abertura", None))
+        self.LBdataAbertura.setText(QCoreApplication.translate("fecharCadastro", u"TextLabel", None))
+        self.label_5.setText(QCoreApplication.translate("fecharCadastro", u"Data de fechamento", None))
+        self.label_2.setText(QCoreApplication.translate("fecharCadastro", u"Descri\u00e7\u00e3o de fechamento", None))
+        self.pushButton.setText(QCoreApplication.translate("fecharCadastro", u"Confirmar", None))
     # retranslateUi
 
